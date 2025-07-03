@@ -21,7 +21,12 @@
 
 Oyunumuz, iki oyuncunun kendi drone’larını kontrol ederek karşı karşıya geldiği, gerçek zamanlı bir PvP deneyimi sunacak. Drone’lar, sahip oldukları çeşitlilik ve üzerlerine eklenen silahlarla birbirinden ayrışacak. Oyuncular, drone’larına yerleştirdikleri silahları kullanarak rakip oyuncuyu saf dışı bırakmaya çalışacak. Farklı drone ve silah kombinasyonları sayesinde oyunda süreklilik ve stratejik çeşitlilik sağlanacak.
 
-**Oyun Hikayesi**
+**Oyun Hedefi:**
+
+Oyunumuzun temel hedefi, oyunculara yüksek tempolu, rekabetçi bir deneyim sunmaktır. İki oyuncunun gerçek zamanlı olarak kendi drone’larını kontrol ettiği bu PvP savaş oyununda amaç, farklı silah kombinasyonları ve taktiksel hamlelerle rakip oyuncuyu etkisiz hale getirmektir.
+
+Oyuncular, farklı özelliklere sahip drone'lar ve modifiye edilebilir silah sistemleriyle kendi oyun tarzlarını yansıtan yapılar kurabilecek, reflekslerini ve becerilerini test edebileceklerdir. Oyun, sürdürülebilir rekabeti teşvik eden özelleştirme seçenekleri ve çeşitliliğe dayalı bir sistem üzerine kuruludur.
+
 **Oyun Özellikleri**
 **Hedef Kitle**
 **Pazarlama Planı**
