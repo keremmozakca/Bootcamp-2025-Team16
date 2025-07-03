@@ -45,8 +45,13 @@ Oyuncular, farklı özelliklere sahip drone'lar ve modifiye edilebilir silah sis
 - C#
 - Multiplayer altyapısı (örn. Photon, Mirror, kendi sunucular vb.)
 
-**Hedef Kitle**
-**Pazarlama Planı**
+**Hedef Kitle:**
+
+Aksiyon oyunlarını seven, rekabetçi oyunlardan hoşlanan insanlar.
+
+**Pazarlama Planı:**
+
+Google Play Store üzerinden ücretsiz olarak indirilen bir oyundur ve reklamlar aracılığıyla gelir sağlanır. Oyunun tanıtımı oynanış videosu ile sunulur.
 
 ## Sprint 1
 
