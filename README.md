@@ -16,7 +16,11 @@
 
 **Oyun Adı:** ---
 **Oyun Logosu**
-**Oyun Açıklaması**
+
+**Oyun Açıklaması**:
+
+Oyunumuz, iki oyuncunun kendi drone’larını kontrol ederek karşı karşıya geldiği, gerçek zamanlı bir PvP deneyimi sunacak. Drone’lar, sahip oldukları çeşitlilik ve üzerlerine eklenen silahlarla birbirinden ayrışacak. Oyuncular, drone’larına yerleştirdikleri silahları kullanarak rakip oyuncuyu saf dışı bırakmaya çalışacak. Farklı drone ve silah kombinasyonları sayesinde oyunda süreklilik ve stratejik çeşitlilik sağlanacak.
+
 **Oyun Hikayesi**
 **Oyun Özellikleri**
 **Hedef Kitle**
