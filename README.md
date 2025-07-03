@@ -8,7 +8,7 @@
 
 - Kerem Özakça (Scrum Master)
 - Gökçe Özturan (3D Artist)
-- Yavuz Altay
+- Yavuz Altay (Product Owner)
 - Servercan Karaağaç
 - Yasemin Çelik
 
