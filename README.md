@@ -27,7 +27,24 @@ Oyunumuzun temel hedefi, oyunculara yüksek tempolu, rekabetçi bir deneyim sunm
 
 Oyuncular, farklı özelliklere sahip drone'lar ve modifiye edilebilir silah sistemleriyle kendi oyun tarzlarını yansıtan yapılar kurabilecek, reflekslerini ve becerilerini test edebileceklerdir. Oyun, sürdürülebilir rekabeti teşvik eden özelleştirme seçenekleri ve çeşitliliğe dayalı bir sistem üzerine kuruludur.
 
-**Oyun Özellikleri**
+## Temel Özellikler
+
+- **Drone Kontrolü:** Oyuncular drone’larını serbestçe hareket ettirebilir ve yönlendirebilir.
+- **Yakına Gidince Hasar Verme:** Drone’lar, rakiplerine belirli bir mesafede temas ederek hasar verebilir.
+- **Can Sistemi:** Her drone’un sağlık puanı bulunur, hasar alındıkça azalır.
+- **Uçma Mekaniği:** Drone’lar yükseklik dahilinde uçabilir ve hava hakimiyetini kullanabilir.
+- **Serbest Kamera ve Etrafı Görme:** Oyuncular, drone çevresini farklı açılardan görebilir ve etrafı kontrol edebilir.
+- **Online Gerçek Zamanlı 3D PvP:** İki oyuncu aynı arenada çevrimiçi olarak karşılaşır.
+- **Çevre (Arena Tasarımı):** Çeşitli tema ve engeller içeren mücadele alanları.
+- **Hasar Veren Objelerden Kaçma:** Arenadaki tehlikeli çevresel engellerden kaçınma mekaniği.
+- **Silah Seçimi ve Yerleşimi (Opsiyonel):** Oyuncular drone’larına farklı silahlar takarak özelleştirebilir.
+- **Skor ve Eşleşme Sistemi (Opsiyonel):** PvP maçlarının skor takibi ve oyuncu eşleştirme sistemi.
+
+## Teknolojiler
+- Unity 3D (veya kullanılacak oyun motoru)
+- C# (veya proje dili)
+- Multiplayer altyapısı (örn. Photon, Mirror, kendi sunucular vb.)
+
 **Hedef Kitle**
 **Pazarlama Planı**
 
