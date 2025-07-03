@@ -37,12 +37,12 @@ Oyuncular, farklı özelliklere sahip drone'lar ve modifiye edilebilir silah sis
 - **Online Gerçek Zamanlı 3D PvP:** İki oyuncu aynı arenada çevrimiçi olarak karşılaşır.
 - **Çevre (Arena Tasarımı):** Çeşitli tema ve engeller içeren mücadele alanları.
 - **Hasar Veren Objelerden Kaçma:** Arenadaki tehlikeli çevresel engellerden kaçınma mekaniği.
-- **Silah Seçimi ve Yerleşimi (Opsiyonel):** Oyuncular drone’larına farklı silahlar takarak özelleştirebilir.
-- **Skor ve Eşleşme Sistemi (Opsiyonel):** PvP maçlarının skor takibi ve oyuncu eşleştirme sistemi.
+- **Silah Seçimi ve Yerleşimi:** Oyuncular drone’larına farklı silahlar takarak özelleştirebilir.
+- **Rastgele Oyuncu Eşleştirme:** Oyuncu eşleştirme.
 
 ## Teknolojiler
-- Unity 3D (veya kullanılacak oyun motoru)
-- C# (veya proje dili)
+- Unity 3D
+- C#
 - Multiplayer altyapısı (örn. Photon, Mirror, kendi sunucular vb.)
 
 **Hedef Kitle**
