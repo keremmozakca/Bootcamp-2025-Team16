@@ -2,7 +2,7 @@
 
 **Takım Adı:** DroneFlighters
 
-/Logo buraya gelecek/
+![](https://github.com/user-attachments/assets/7ef0f3a1-f16d-4cd4-bbbc-cbc91e7454ad)
 
 # Takım Üyelerimiz:
 
@@ -16,9 +16,9 @@
 
 **Oyun Adı:** Drone Battle 3D
 
-**Oyun Logosu**
+**Oyun Logosu:**
 
-![](https://github.com/user-attachments/assets/7ef0f3a1-f16d-4cd4-bbbc-cbc91e7454ad)
+![](https://github.com/user-attachments/assets/07b19ef9-bf84-4853-a916-f16dba9a976c)
 
 **Oyun Açıklaması**:
 
