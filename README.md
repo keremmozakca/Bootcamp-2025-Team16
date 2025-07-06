@@ -55,7 +55,7 @@ Google Play Store üzerinden ücretsiz olarak indirilen bir oyundur ve reklamlar
 
 ## Sprint 1
 
-**Scrum Yönetim Uygulaması:** [Jira][https://keremmozakca.atlassian.net/] üzerinden yürütülmektedir. İlgili adres üzerinden projemizi görebilirsiniz. 
+**Scrum Yönetim Uygulaması:** Jira[https://keremmozakca.atlassian.net/] üzerinden yürütülmektedir. İlgili adres üzerinden projemizi görebilirsiniz. 
 **Sprint Notları:** 
 ***İlk Toplantı (24 Haziran):*** Gerçekleştirdiğimiz toplantımızda öncelikle takımımızda yer alan tüm herkesin birbiriyle tanışması ve planlamamızı yapmak için Huddle üzerinden sesli toplantı gerçekleştirdik. Sohbet ortamı oluşturduktan sonrasında projemiz için gerekli ilk aşama olan "oyun fikri" bulmak için farklı görüşlerimizi dile getirdik. Daha sonrasında fikirlerimizi daha da olgunlaştırabilmek ve geliştirebilmek amacıyla tüm herkese 2 gün süre tanıdık ve bir sonraki toplantıya kadar herkesin yazılı bir şekilde oyun fikri yazmasını talep ettik. Toplantının genel içeriği bu şekildedir.
 
