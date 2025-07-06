@@ -18,7 +18,7 @@
 
 **Oyun Logosu**
 
-![](https://github.com/user-attachments/assets/7f8292b9-603e-43c7-957a-b468ba2c1953)
+![](https://github.com/user-attachments/assets/7ef0f3a1-f16d-4cd4-bbbc-cbc91e7454ad)
 
 **Oyun Açıklaması**:
 
