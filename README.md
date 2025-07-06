@@ -1,6 +1,6 @@
 # Bootcamp 2025
 
-**Takım Adı:** ---
+**Takım Adı:** DroneFlighters
 
 /Logo buraya gelecek/
 
@@ -14,8 +14,11 @@
 
 # OYUN HAKKINDA BİLGİLER
 
-**Oyun Adı:** ---
+**Oyun Adı:** Drone Battle 3D
+
 **Oyun Logosu**
+
+![](https://github.com/user-attachments/assets/7f8292b9-603e-43c7-957a-b468ba2c1953)
 
 **Oyun Açıklaması**:
 
@@ -80,6 +83,14 @@ Google Play Store üzerinden ücretsiz olarak indirilen bir oyundur ve reklamlar
 **Sprint Board Updates:**
 
 ![](https://github.com/user-attachments/assets/d5ba7180-af23-4009-b854-5e8b4dc72af4)
+
+**Screenshots:** [Sprint 1 içi görüntüler.](https://ibb.co/album/35xybd)
+
+***Üçüncü Toplantı (6 Temmuz):*** Sprint 1 sürecini değerlendirmek ve retrospektif yapmak amacıyla toplandık ve oluşturduğumuz GDD üzerinde konuşarak oyunun teknik açıdan ilerleyişi ile ilgili kafamızdaki soru işaretlerini giderdik. Bazı önemli mekaniklere, oyun bakış açısı ve arena teması gibi detayları, kısa ve uzun vadelerdeki hedeflerimizi konuştuk.
+
+**Sprint Review:** Genel olarak değerlendirmek gerekirse bu Sprint için fikri belirlemeye ve GDD oluşturma üzerine odaklandığımız için iş yükü ve karmaşıklık olarak düşük bir sprintti. Bize katkısı GDD'yi tam anlamıyla oluşturmak ve fikri geliştirerek yol haritası ve vizyon çizme noktasında önemli bir süreçti. Büyük ölçüde başarılı bir 2 haftaydı. Daha da hızlanmamız gerekiyor.
+
+**Sprint Retrospective:** Önümüzdeki haftalarda hızlanmayı ve teknik anlamda çalışmalara başlayıp gerçek anlamda oyunu geliştirmeye başlamamız gerekiyor. Toplanmalarımız ve bir araya geleceğimiz zamanlar çok uyuşmadığı için ürün anlamında başlangıcı yapamadık ancak önümüzdeki günlerden itibaren hızlıca ilerleyip telafi etmeyi planlıyoruz. İletişim konusu daha iyi sağlanabilir. Fikir tamam, hiçbir şey için geç değil...
 
 
 
