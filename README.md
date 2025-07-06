@@ -53,15 +53,13 @@ Aksiyon oyunlarını seven, rekabetçi oyunlardan hoşlanan insanlar.
 
 Google Play Store üzerinden ücretsiz olarak indirilen bir oyundur ve reklamlar aracılığıyla gelir sağlanır. Oyunun tanıtımı oynanış videosu ile sunulur.
 
+**GDD Dökümanı:** [İncele](https://www.notion.so/Game-Design-Document-223fcfceb1b480bfb32ac8e8f090ef38)
+
 ## Sprint 1
 
 **Scrum Yönetim Uygulaması:** [Jira](https://keremmozakca.atlassian.net/) üzerinden yürütülmektedir. İlgili adres üzerinden projemizi görebilirsiniz. 
 
 **Sprint Notları:** Bu sprintte daha çok fikir geliştirmesi üzerine yoğunlaşılmıştır. User Story'ler Jira sayfamızdaki Backlog'ların içerisine yazılmıştır. İncelemelerinizi "Kapsam" bölümünden yapabilirsiniz.
-
-***İlk Toplantı (24 Haziran):*** Gerçekleştirdiğimiz toplantımızda öncelikle takımımızda yer alan tüm herkesin birbiriyle tanışması ve planlamamızı yapmak için Huddle üzerinden sesli toplantı gerçekleştirdik. Sohbet ortamı oluşturduktan sonrasında projemiz için gerekli ilk aşama olan "oyun fikri" bulmak için farklı görüşlerimizi dile getirdik. Daha sonrasında fikirlerimizi daha da olgunlaştırabilmek ve geliştirebilmek amacıyla tüm herkese 2 gün süre tanıdık ve bir sonraki toplantıya kadar herkesin yazılı bir şekilde oyun fikri yazmasını talep ettik. Toplantının genel içeriği bu şekildedir.
-
-***İkinci Toplantı (1 Temmuz):*** Oyununun konusu , kapsamı ve içeriği hakkında çoğunlukla fikir birliği sağlandı, oyundaki oynanış mekanikleri hakkındaki detaylar konuşuldu (karakterimiz otomatik saldırı mı yapacak saldırıyı skill shotlarla biz mi yapıcaz vs.) karakterimizin oynanış bakış açısının nasıl olacağı hakkında tartışıldı ve net bir fikre varılamadığı için ileri tarihe ertelendi. Drone, silah çeşitliliği, silahların pozisyonlandırılması gibi konular da ayrıca konuşulup tekrardan ileri bir tarihe ertelenen konulardan biriydi.
 
 **Tamamlanması Tahmin Edilen Puan:** 13 SP
 
@@ -73,6 +71,15 @@ Google Play Store üzerinden ücretsiz olarak indirilen bir oyundur ve reklamlar
 
 - Task’lar genellikle 1–2 puan arası, yalnızca hikayeleştirme gerektiren story 2 puan aldı.
 
+**Daily Scrum:** Scrum içerisindeki iletişimimiz genellikle whatsapp ve açtığımız Slack kanalında Huddle üzerindeki toplantılarla sağlanmıştır.
+
+***İlk Toplantı (24 Haziran):*** Gerçekleştirdiğimiz toplantımızda öncelikle takımımızda yer alan tüm herkesin birbiriyle tanışması ve planlamamızı yapmak için Huddle üzerinden sesli toplantı gerçekleştirdik. Sohbet ortamı oluşturduktan sonrasında projemiz için gerekli ilk aşama olan "oyun fikri" bulmak için farklı görüşlerimizi dile getirdik. Daha sonrasında fikirlerimizi daha da olgunlaştırabilmek ve geliştirebilmek amacıyla tüm herkese 2 gün süre tanıdık ve bir sonraki toplantıya kadar herkesin yazılı bir şekilde oyun fikri yazmasını talep ettik. Toplantının genel içeriği bu şekildedir.
+
+***İkinci Toplantı (1 Temmuz):*** Oyununun konusu , kapsamı ve içeriği hakkında çoğunlukla fikir birliği sağlandı, oyundaki oynanış mekanikleri hakkındaki detaylar konuşuldu (karakterimiz otomatik saldırı mı yapacak saldırıyı skill shotlarla biz mi yapıcaz vs.) karakterimizin oynanış bakış açısının nasıl olacağı hakkında tartışıldı ve net bir fikre varılamadığı için ileri tarihe ertelendi. Drone, silah çeşitliliği, silahların pozisyonlandırılması gibi konular da ayrıca konuşulup tekrardan ileri bir tarihe ertelenen konulardan biriydi.
+
+**Sprint Board Updates:**
+
+![](https://github.com/user-attachments/assets/d5ba7180-af23-4009-b854-5e8b4dc72af4)
 
 
 
