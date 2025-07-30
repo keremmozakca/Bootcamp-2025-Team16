@@ -53,9 +53,5 @@ public class HealthSliderFollow : MonoBehaviour
 
         // UI'yý konumlandýr
         uiTransform.position = screenPos;
-
-        // Kameraya dönük tutmak istersen:
-        // Vector3 dir = mainCamera.transform.position - uiTransform.position;
-        // uiTransform.rotation = Quaternion.LookRotation(-dir);
     }
 }

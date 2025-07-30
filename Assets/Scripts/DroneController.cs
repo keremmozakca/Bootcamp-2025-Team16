@@ -1,110 +1,122 @@
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
+using DG.Tweening; // DOTween'i kullanabilmek için
 
-[RequireComponent(typeof(Rigidbody))]
 public class DroneController : MonoBehaviour
 {
-    [Tooltip("Joystick referansÄ±")]
-    public SimpleJoystick joystick;
+    private Vector2 _startTouchPos;
+    private Vector2 _endTouchPos;
 
-    [Header("Hareket AyarlarÄ±")]
-    public float moveForce = 10f;
-    public float maxSpeed;
-    public float rotationSpeed = 200f;
-    public float movementThreshold = 0.1f;
-    public float dragCoefficient = 0.92f;
-    public float stopThreshold = 0.1f;
+    public static float ForwardSpeed = 10f;
+    private float _swipeThreshold = 50f;
+    private float _moveDuration = 0.2f;
 
-    [Header("Tilt AyarlarÄ±")]
-    public float maxTiltAngle = 15f;
-    public float tiltSpeed = 5f;
+    private float _horizontalStep = 3f;
+    private float _verticalStep = 8f;
 
-    private Rigidbody _rb;
-    private float _currentYAngle = 0f;
-    private Vector3 _targetTiltEuler = Vector3.zero;
+    private int _currentLane = 0; // -1 = sol, 0 = orta, 1 = sað
+    private int _currentHeight = 0; // 0 = yukarý, -1 = aþaðý
 
-    void Start()
+    private float _tiltAmount = 10f;
+    private float _tiltResetDuration = 0.2f;
+
+    private void Start()
     {
-        _rb = GetComponent<Rigidbody>();
-        _rb.constraints = RigidbodyConstraints.FreezePositionY;
-        DroneStats _stat = new DroneStats();
-        maxSpeed = _stat.Speed;
-        _currentYAngle = transform.eulerAngles.y;
+        // Pozisyon baþlangýcý 0 lane ve yukarýda
+        Vector3 startPos = transform.position;
+        transform.position = new Vector3(startPos.x, startPos.y, startPos.z);
     }
 
-    void FixedUpdate()
+    private void Update()
     {
-        if (joystick == null) return;
+        HandleSwipeInput();
 
-        Vector2 input = joystick.Direction;
-        bool hasInput = input.magnitude > movementThreshold;
+        // Z ekseninde ileri hareket
+        transform.Translate(Vector3.forward * ForwardSpeed * Time.deltaTime);
+    }
 
-        if (hasInput)
+    private void HandleSwipeInput()
+    {
+        if (Input.touchCount == 0)
+            return;
+
+        Touch touch = Input.GetTouch(0);
+
+        if (touch.phase == TouchPhase.Began)
         {
-            ApplyRotationAndTilt(input);
-            ApplyMovement(input);
+            _startTouchPos = touch.position;
         }
-        else
+        else if (touch.phase == TouchPhase.Ended)
         {
-            ApplyDrag();
-            ApplyRotationAndTilt(Vector2.zero); // tilt sÄ±fÄ±rlansÄ±n ama yÃ¶n bozulmasÄ±n
-        }
+            _endTouchPos = touch.position;
+            Vector2 swipe = _endTouchPos - _startTouchPos;
 
-        LimitVelocity();
+            if (swipe.magnitude < _swipeThreshold)
+                return;
+
+            if (Mathf.Abs(swipe.x) > Mathf.Abs(swipe.y))
+            {
+                if (swipe.x > 0)
+                    MoveRight();
+                else
+                    MoveLeft();
+            }
+            else
+            {
+                if (swipe.y > 0)
+                    MoveUp();
+                else
+                    MoveDown();
+            }
+        }
     }
 
-    private void ApplyRotationAndTilt(Vector2 input)
+    private void MoveLeft()
     {
-        // --- Y Ekseni Rotasyonu Hesapla ---
-        if (input.magnitude > 0.1f)
+        if (_currentLane > -1)
         {
-            float targetAngle = Mathf.Atan2(input.x, input.y) * Mathf.Rad2Deg;
-            float deltaAngle = Mathf.DeltaAngle(_currentYAngle, targetAngle);
-            _currentYAngle += deltaAngle * rotationSpeed * Time.fixedDeltaTime / 100f;
+            _currentLane--;
+            float targetX = transform.position.x - _horizontalStep;
+            transform.DOMoveX(targetX, _moveDuration).SetEase(Ease.OutQuad);
+            ApplyTilt(Vector3.forward * _tiltAmount);
         }
-
-        Quaternion rotationY = Quaternion.Euler(0f, _currentYAngle, 0f);
-
-        // --- X-Z Tilt Hesapla ---
-        float tiltX = -input.y * maxTiltAngle;
-        float tiltZ = input.x * maxTiltAngle;
-        Quaternion tiltRotation = Quaternion.Euler(tiltX, 0f, tiltZ);
-
-        // --- Tilt + DÃ¶nÃ¼ÅŸ BirleÅŸtir ---
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotationY * tiltRotation, Time.fixedDeltaTime * tiltSpeed);
     }
 
-    private void ApplyMovement(Vector2 input)
+    private void MoveRight()
     {
-        Vector3 moveDir = transform.forward * input.magnitude;
-        _rb.AddForce(moveDir * moveForce, ForceMode.Force);
-    }
-
-    private void ApplyDrag()
-    {
-        Vector3 velocity = _rb.linearVelocity;
-        velocity.x *= dragCoefficient;
-        velocity.z *= dragCoefficient;
-
-        if (Mathf.Abs(velocity.x) < stopThreshold) velocity.x = 0f;
-        if (Mathf.Abs(velocity.z) < stopThreshold) velocity.z = 0f;
-
-        _rb.linearVelocity = velocity;
-    }
-
-    private void LimitVelocity()
-    {
-        Vector3 velocity = _rb.linearVelocity;
-        velocity.y = 0f;
-
-        Vector3 horizontalVelocity = new Vector3(velocity.x, 0f, velocity.z);
-        if (horizontalVelocity.magnitude > maxSpeed)
+        if (_currentLane < 1)
         {
-            horizontalVelocity = horizontalVelocity.normalized * maxSpeed;
-            velocity.x = horizontalVelocity.x;
-            velocity.z = horizontalVelocity.z;
+            _currentLane++;
+            float targetX = transform.position.x + _horizontalStep;
+            transform.DOMoveX(targetX, _moveDuration).SetEase(Ease.OutQuad);
+            ApplyTilt(Vector3.back * _tiltAmount);
         }
+    }
 
-        _rb.linearVelocity = velocity;
+    private void MoveUp()
+    {
+        if (_currentHeight < 0)
+        {
+            _currentHeight++;
+            float targetY = transform.position.y + _verticalStep;
+            transform.DOMoveY(targetY, _moveDuration).SetEase(Ease.OutQuad);
+        }
+    }
+
+    private void MoveDown()
+    {
+        if (_currentHeight > -1)
+        {
+            _currentHeight--;
+            float targetY = transform.position.y - _verticalStep;
+            transform.DOMoveY(targetY, _moveDuration).SetEase(Ease.OutQuad);
+        }
+    }
+
+    private void ApplyTilt(Vector3 tiltEuler)
+    {
+        transform.DORotate(tiltEuler, _moveDuration).SetEase(Ease.OutQuad).OnComplete(() =>
+        {
+            transform.DORotate(Vector3.zero, _tiltResetDuration).SetEase(Ease.OutQuad);
+        });
     }
 }
