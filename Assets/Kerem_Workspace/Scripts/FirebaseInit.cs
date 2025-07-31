@@ -9,7 +9,7 @@ public class FirebaseInit : MonoBehaviour
     private DatabaseReference activeUsersRef;
     private DatabaseReference scoresRef;
 
-    public string currentNickname;
+    public string currentNickname = GameSession.CurrentUser;
     void Start()
     {
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(task =>
@@ -70,6 +70,7 @@ new System.Uri("https://yzta-bootcamp-8abbc-default-rtdb.europe-west1.firebaseda
                     else
                     {
                         currentNickname = nickname;
+                        GameSession.CurrentUser = nickname;
                         callback(true, "Giriş başarılı!");
                     }
                 });
