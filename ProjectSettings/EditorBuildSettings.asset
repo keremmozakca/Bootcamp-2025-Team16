@@ -8,6 +8,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Kerem_Workspace/Scenes/Login.unity
+    guid: 3d554f2634b376f4f87589c8f246284a
+  - enabled: 1
+    path: Assets/Kerem_Workspace/Scenes/Main.unity
+    guid: ec3edfbbfe8226c488835bf13191bd16
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 07dcea7478513374e8e0e46bab5d8fd6, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
