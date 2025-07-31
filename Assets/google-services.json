@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "198817002147",
+    "firebase_url": "https://yzta-bootcamp-8abbc-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "yzta-bootcamp-8abbc",
+    "storage_bucket": "yzta-bootcamp-8abbc.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:198817002147:android:23e19e3c5bbd7621008516",
+        "android_client_info": {
+          "package_name": "com.keremozakca.bootcamp25"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSf7JOfVeL7Fnu-vHTQo5_9Nj3Sa0e554"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
