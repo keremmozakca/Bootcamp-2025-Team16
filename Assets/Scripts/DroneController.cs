@@ -1,122 +1,113 @@
 using UnityEngine;
-using DG.Tweening; // DOTween'i kullanabilmek için
+using DG.Tweening;
 
 public class DroneController : MonoBehaviour
 {
-    private Vector2 _startTouchPos;
-    private Vector2 _endTouchPos;
+    [Header("Touch Settings")]
+    [SerializeField] private float swipeThreshold = 50f;
 
-    public static float ForwardSpeed = 10f;
-    private float _swipeThreshold = 50f;
-    private float _moveDuration = 0.2f;
+    [Header("Movement Settings")]
+    [SerializeField] public static float ForwardSpeed = 10f;
+    [SerializeField] private float moveDuration = 0.2f;
+    [SerializeField] private float laneStep = 3f;
+    [SerializeField] private float heightStep = 8f;
 
-    private float _horizontalStep = 3f;
-    private float _verticalStep = 8f;
+    [Header("Tilt Settings")]
+    [SerializeField] private float tiltAngle = 10f;
+    [SerializeField] private float tiltResetDuration = 0.2f;
 
-    private int _currentLane = 0; // -1 = sol, 0 = orta, 1 = sað
-    private int _currentHeight = 0; // 0 = yukarý, -1 = aþaðý
-
-    private float _tiltAmount = 10f;
-    private float _tiltResetDuration = 0.2f;
-
-    private void Start()
-    {
-        // Pozisyon baþlangýcý 0 lane ve yukarýda
-        Vector3 startPos = transform.position;
-        transform.position = new Vector3(startPos.x, startPos.y, startPos.z);
-    }
+    private Vector2 startTouchPos, endTouchPos;
+    private int currentLane = 0; // -1=left, 0=center, +1=right
+    private int currentHeight = 0; // 0=top, -1=bottom
+    private bool isMoving = false;
 
     private void Update()
     {
         HandleSwipeInput();
-
-        // Z ekseninde ileri hareket
-        transform.Translate(Vector3.forward * ForwardSpeed * Time.deltaTime);
+        // Sürekli ileri hareket (World Z ekseni)
+        transform.Translate(Vector3.forward * ForwardSpeed * Time.deltaTime, Space.World);
     }
 
     private void HandleSwipeInput()
     {
-        if (Input.touchCount == 0)
-            return;
+        if (Input.touchCount == 0 || isMoving) return;
 
         Touch touch = Input.GetTouch(0);
-
         if (touch.phase == TouchPhase.Began)
-        {
-            _startTouchPos = touch.position;
-        }
+            startTouchPos = touch.position;
         else if (touch.phase == TouchPhase.Ended)
         {
-            _endTouchPos = touch.position;
-            Vector2 swipe = _endTouchPos - _startTouchPos;
-
-            if (swipe.magnitude < _swipeThreshold)
-                return;
+            endTouchPos = touch.position;
+            Vector2 swipe = endTouchPos - startTouchPos;
+            if (swipe.magnitude < swipeThreshold) return;
 
             if (Mathf.Abs(swipe.x) > Mathf.Abs(swipe.y))
             {
-                if (swipe.x > 0)
-                    MoveRight();
-                else
-                    MoveLeft();
+                if (swipe.x > 0) MoveRight();
+                else MoveLeft();
             }
             else
             {
-                if (swipe.y > 0)
-                    MoveUp();
-                else
-                    MoveDown();
+                if (swipe.y > 0) MoveUp();
+                else MoveDown();
             }
         }
     }
 
     private void MoveLeft()
     {
-        if (_currentLane > -1)
-        {
-            _currentLane--;
-            float targetX = transform.position.x - _horizontalStep;
-            transform.DOMoveX(targetX, _moveDuration).SetEase(Ease.OutQuad);
-            ApplyTilt(Vector3.forward * _tiltAmount);
-        }
+        if (currentLane <= -1) return;
+        currentLane--;
+        isMoving = true;
+        // Sadece X ekseninde kaydýr
+        transform.DOMoveX(transform.position.x - laneStep, moveDuration)
+                 .SetEase(Ease.OutQuad)
+                 .OnComplete(() => isMoving = false);
+        ApplyTilt(Vector3.forward * tiltAngle);
     }
 
     private void MoveRight()
     {
-        if (_currentLane < 1)
-        {
-            _currentLane++;
-            float targetX = transform.position.x + _horizontalStep;
-            transform.DOMoveX(targetX, _moveDuration).SetEase(Ease.OutQuad);
-            ApplyTilt(Vector3.back * _tiltAmount);
-        }
+        if (currentLane >= 1) return;
+        currentLane++;
+        isMoving = true;
+        transform.DOMoveX(transform.position.x + laneStep, moveDuration)
+                 .SetEase(Ease.OutQuad)
+                 .OnComplete(() => isMoving = false);
+        ApplyTilt(Vector3.back * tiltAngle);
     }
 
     private void MoveUp()
     {
-        if (_currentHeight < 0)
-        {
-            _currentHeight++;
-            float targetY = transform.position.y + _verticalStep;
-            transform.DOMoveY(targetY, _moveDuration).SetEase(Ease.OutQuad);
-        }
+        if (currentHeight >= 0) return;
+        currentHeight++;
+        isMoving = true;
+        transform.DOMoveY(transform.position.y + heightStep, moveDuration)
+                 .SetEase(Ease.OutQuad)
+                 .OnComplete(() => isMoving = false);
     }
 
     private void MoveDown()
     {
-        if (_currentHeight > -1)
-        {
-            _currentHeight--;
-            float targetY = transform.position.y - _verticalStep;
-            transform.DOMoveY(targetY, _moveDuration).SetEase(Ease.OutQuad);
-        }
+        if (currentHeight <= -1) return;
+        currentHeight--;
+        isMoving = true;
+        transform.DOMoveY(transform.position.y - heightStep, moveDuration)
+                 .SetEase(Ease.OutQuad)
+                 .OnComplete(() => isMoving = false);
     }
 
     private void ApplyTilt(Vector3 tiltEuler)
     {
-        transform.DORotate(tiltEuler, _moveDuration).SetEase(Ease.OutQuad).OnComplete(() =>
-        {
-            transform.DORotate(Vector3.zero, _tiltResetDuration).SetEase(Ease.OutQuad);
-        });
+        Quaternion originalRot = transform.rotation;
+        Quaternion tiltRot = Quaternion.Euler(tiltEuler) * originalRot;
+
+        transform.DORotateQuaternion(tiltRot, moveDuration)
+                 .SetEase(Ease.OutQuad)
+                 .OnComplete(() =>
+                 {
+                     transform.DORotateQuaternion(originalRot, tiltResetDuration)
+                              .SetEase(Ease.OutQuad);
+                 });
     }
 }
