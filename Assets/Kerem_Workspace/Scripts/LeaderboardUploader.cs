@@ -41,4 +41,9 @@ public class LeaderboardUploader : MonoBehaviour
             }
         });
     }
+
+    private void Start()
+    {
+        UploadScoreIfBest(GameSession.CurrentUser, 0);
+    }
 }
