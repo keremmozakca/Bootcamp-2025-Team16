@@ -1,10 +1,14 @@
 using Firebase.Database;
 using Firebase.Extensions;
+using System;
+using TMPro;
 using UnityEngine;
 
 public class LeaderboardUploader : MonoBehaviour
 {
     //string currentUser = GameSession.CurrentUser;
+    [SerializeField] private GameObject scoreField;
+    [SerializeField] private GameObject message;
     public void UploadScoreIfBest(string nickname, double currentScore)
     {
         DatabaseReference dbRef = FirebaseDatabase.DefaultInstance.GetReference("scores").Child(nickname);
@@ -40,6 +44,25 @@ public class LeaderboardUploader : MonoBehaviour
                 Debug.Log($"[Firebase] Skor yeterince yüksek değil, güncellenmedi. (Eski: {bestScore}, Yeni: {currentScore})");
             }
         });
+    }
+
+    public void uploadScore()
+    {
+        int currentScore;
+        try
+        {
+            string inputText = scoreField.GetComponent<TMP_InputField>().text;
+            currentScore = int.Parse(inputText);
+            UploadScoreIfBest(GameSession.CurrentUser, currentScore);
+        }
+        catch (FormatException)
+        {
+            Debug.LogWarning("Geçersiz skor formatı! Lütfen geçerli bir sayı girin.");
+        }
+        catch (Exception ex)
+        {
+            Debug.LogError("Bilinmeyen bir hata oluştu: " + ex.Message);
+        }
     }
 
     private void Start()

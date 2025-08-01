@@ -12,13 +12,19 @@ public class LeaderboardFetcher : MonoBehaviour
     public GameObject scoreEntryPrefab;  // UI prefab (içinde Text veya TMP_Text olacak)
     public Transform contentParent;      // ScrollView -> Viewport -> Content objesi
     public GameObject leaderboardPanel;
+
+    [SerializeField] private GameObject scoreSendingPanel;
+
+    public GameObject userText;
     void Start()
     {
         //FetchLeaderboard();
+        userText.GetComponent<TMP_Text>().text = GameSession.CurrentUser;
     }
 
     public void FetchLeaderboard()
     {
+        scoreSendingPanel.SetActive(false);
         leaderboardPanel.SetActive(true);
         DatabaseReference scoresRef = FirebaseDatabase.DefaultInstance.GetReference("scores");
 
@@ -55,6 +61,10 @@ public class LeaderboardFetcher : MonoBehaviour
             foreach (var entry in sortedEntries)
             {
                 GameObject entryGO = Instantiate(scoreEntryPrefab, contentParent);
+                if (entry.nickname.Equals(GameSession.CurrentUser))
+                {
+                    entryGO.GetComponent<Image>().color = Color.magenta;
+                }
 
                 // TMP_Text bileşenlerine erişim
                 TMP_Text orderText = entryGO.transform.Find("Order").GetComponent<TMP_Text>();
@@ -75,6 +85,7 @@ public class LeaderboardFetcher : MonoBehaviour
             Destroy(child.gameObject);
         }
         leaderboardPanel.SetActive(false);
+        scoreSendingPanel.SetActive(true);
     }
 
 }
