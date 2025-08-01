@@ -10,6 +10,26 @@ public class FirebaseInit : MonoBehaviour
     private DatabaseReference scoresRef;
 
     public string currentNickname = GameSession.CurrentUser;
+
+    public static FirebaseInit Instance;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject); // Sahne değişince silinmesin
+        }
+        else
+        {
+            Destroy(gameObject); // Zaten varsa, tekrar oluşturulmasın
+        }
+    }
+    private void OnDestroy()
+    {
+        Debug.Log("FirebaseInit siliniyor");
+        Logout();
+    }
     void Start()
     {
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(task =>
@@ -81,12 +101,14 @@ new System.Uri("https://yzta-bootcamp-8abbc-default-rtdb.europe-west1.firebaseda
     // Kullanıcı çıkışı
     public void Logout()
     {
+        string nickname = GameSession.CurrentUser;
         if (string.IsNullOrEmpty(currentNickname))
             return;
 
         activeUsersRef.Child(currentNickname).RemoveValueAsync();
         scoresRef.Child(currentNickname).RemoveValueAsync();
         currentNickname = null;
+        GameSession.CurrentUser = null;
 
         Debug.Log("Çıkış yapıldı.");
     }
@@ -104,5 +126,11 @@ new System.Uri("https://yzta-bootcamp-8abbc-default-rtdb.europe-west1.firebaseda
                 Debug.Log("Veri başarıyla yazıldı!");
             }
         });
+    }
+
+    void OnApplicationQuit()
+    {
+        Debug.Log("OnApplicationQuit çağrıldı");
+        Logout();
     }
 }
