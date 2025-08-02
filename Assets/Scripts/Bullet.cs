@@ -14,7 +14,7 @@ public class Bullet : MonoBehaviour
     {
         // Mermi bir nesneye çarptýðýnda kendini yok et
         // ilerde buraya kontroller ekleyeceðim
-        if(collision.gameObject.CompareTag("Player")|| collision.gameObject.CompareTag("Enemy"))
+        if(collision.gameObject.CompareTag("Enemy"))
         {
             Destroy(gameObject);
             Destroy(collision.gameObject); // Çarpan nesneyi yok et
