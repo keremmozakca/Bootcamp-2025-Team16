@@ -14,6 +14,8 @@ public class LoginPanelController : MonoBehaviour
     [NonSerialized] public Button loginButton;
     [NonSerialized] public TMP_Text messageText;
 
+    [SerializeField] private GameObject _loginPanel;
+
     [SerializeField] private FirebaseInit firebaseInit;
     private void Awake()
     {
@@ -42,5 +44,15 @@ public class LoginPanelController : MonoBehaviour
                 SceneManager.LoadScene(sceneIndx + 1);
             }
         });
+    }
+
+    public void Play()
+    {
+        _loginPanel.SetActive(true);
+    }
+
+    public void quit()
+    {
+        _loginPanel.SetActive(false);
     }
 }
