@@ -120,6 +120,10 @@ Google Play Store üzerinden ücretsiz olarak indirilen bir oyundur ve reklamlar
 
 ![](https://github.com/user-attachments/assets/c7fdd60a-c691-47db-a2b5-5e8e5ff672ef)
 
+![](https://github.com/user-attachments/assets/3ec9051a-a5c0-48af-9d36-74dd43aa798d)
+
+![](https://github.com/user-attachments/assets/bb078908-ec07-44b7-bd8b-c03a4d7d73f9)
+
 **Sprint Review:** Bu sprinti değerlendirmek gerekirse bu Sprint içinde fikrin bir kısmında değişiklik yaptık. Öncelikle multiplayer matchmaking sistemine dayalı olmasını planladığımız halde bunun yerine Google'un Firebase Realtime Database servisini kullanarak oyunumuz içindeki verileri kontrol ederek dünyanın herhangi bir yerinde oyunumuzu oynayan ve o anda aktif olan oyuncuların skorlarını görebileceğimiz bir LeaderBoard sistemi kurduk ve o anda aktif olarak oyunu oynayan oyuncular nickname'lerine göre liderlik tablosunda sıralandı. Oyunun içinde de karşıdan düşmanlar gelecek şekilde bir oynanış sunarak oyunumuzu tamamladık. Geliştirilebileceğini düşünüyoruz ancak bu haliyle de güzel bir oyun oldu. Arada iletişim kopukluklarımız olsa da projemizi tamamladık.
 
 **Sprint Retrospective:** Bu hafta teslim gerçekleştireceğiz ve oyunumuzu tamamladığımız için mutluyuz. Projemizden geri dönüt almak isteriz. Artık geriye sadece projemizin değerlendirmesini beklemek kaldı. Kapanışı yapacağız.
