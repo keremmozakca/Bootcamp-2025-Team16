@@ -100,13 +100,72 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle_Pervane
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0cb486f802228f44c952d2531c0fa7b0, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0cb486f802228f44c952d2531c0fa7b0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2342060486543426214}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0cb486f802228f44c952d2531c0fa7b0, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2941484070629482636}
   m_SourcePrefab: {fileID: 100100000, guid: 0cb486f802228f44c952d2531c0fa7b0, type: 3}
 --- !u!4 &283204210640442335 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0cb486f802228f44c952d2531c0fa7b0, type: 3}
   m_PrefabInstance: {fileID: 316551355481404468}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &623172499805178213 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0cb486f802228f44c952d2531c0fa7b0, type: 3}
+  m_PrefabInstance: {fileID: 316551355481404468}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2342060486543426214
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623172499805178213}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0036047362, y: 0.0010898919, z: 0.003391867}
+  m_Center: {x: -2.6905805e-18, y: -0.0004503338, z: 0.0020165734}
+--- !u!136 &2941484070629482636
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 623172499805178213}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.0004603732
+  m_Height: 0.004632094
+  m_Direction: 2
+  m_Center: {x: 0.000021763117, y: -2.5927058e-18, z: -0.0006790948}
