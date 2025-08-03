@@ -63,7 +63,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4950742617835307009, guid: c063c926321a9e149937d98d0602fce3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -14
+      value: -22
       objectReference: {fileID: 0}
     - target: {fileID: 4950742617835307009, guid: c063c926321a9e149937d98d0602fce3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -127,6 +127,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Obstacle_Pervane
       objectReference: {fileID: 0}
+    - target: {fileID: 2781766019613944245, guid: 5a5018252d0e86042bf1c91f7d878fe3, type: 3}
+      propertyPath: m_TagString
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 5032016447750671943, guid: 5a5018252d0e86042bf1c91f7d878fe3, type: 3}
       propertyPath: m_LocalScale.x
       value: 2000
@@ -145,7 +149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5032016447750671943, guid: 5a5018252d0e86042bf1c91f7d878fe3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.1
+      value: -17
       objectReference: {fileID: 0}
     - target: {fileID: 5032016447750671943, guid: 5a5018252d0e86042bf1c91f7d878fe3, type: 3}
       propertyPath: m_LocalPosition.z

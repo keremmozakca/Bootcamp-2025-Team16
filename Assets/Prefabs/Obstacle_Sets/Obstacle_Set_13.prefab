@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3920080587178605617}
   m_Layer: 0
   m_Name: Obstacle_Set_13
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58,7 +58,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4586941436051613094, guid: 0c3a3a0a8157ef842af51463cfcb2414, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -22
+      value: -24
       objectReference: {fileID: 0}
     - target: {fileID: 4586941436051613094, guid: 0c3a3a0a8157ef842af51463cfcb2414, type: 3}
       propertyPath: m_LocalPosition.z
