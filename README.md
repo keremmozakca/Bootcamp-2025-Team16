@@ -91,3 +91,35 @@ Google Play Store üzerinden ücretsiz olarak indirilen bir oyundur ve reklamlar
 **Sprint Review:** Genel olarak değerlendirmek gerekirse bu Sprint için fikri belirlemeye ve GDD oluşturma üzerine odaklandığımız için iş yükü ve karmaşıklık olarak düşük bir sprintti. Bize katkısı GDD'yi tam anlamıyla oluşturmak ve fikri geliştirerek yol haritası ve vizyon çizme noktasında önemli bir süreçti. Büyük ölçüde başarılı bir 2 haftaydı. Daha da hızlanmamız gerekiyor.
 
 **Sprint Retrospective:** Önümüzdeki haftalarda hızlanmayı ve teknik anlamda çalışmalara başlayıp gerçek anlamda oyunu geliştirmeye başlamamız gerekiyor. Toplanmalarımız ve bir araya geleceğimiz zamanlar çok uyuşmadığı için ürün anlamında başlangıcı yapamadık ancak önümüzdeki günlerden itibaren hızlıca ilerleyip telafi etmeyi planlıyoruz. İletişim konusu daha iyi sağlanabilir. Fikir tamam, hiçbir şey için geç değil...
+
+---
+
+## Sprint 3
+
+**Scrum Yönetim Uygulaması:** [Jira](https://keremmozakca.atlassian.net/) üzerinden yürütülmektedir. İlgili adres üzerinden projemizi görebilirsiniz. 
+
+**Sprint Notları:** Bu sprintte fikrimizde birtakım değişiklikler olmuştur ve yapılan değişikliklere göre oyunumuzun teknik açıdan üretimine baştan başladık. Önceki Sprint'lerde asset üretimi üzerinde gelişmeler kaydettiğimiz için dışarıdan çok fazla asset kullanmayıp takımımızdaki 3D Art konusunda yetenekli olan arkadaşlarımıza görevi vererek görsellik konusunda orijinal assetlerimizi kullandık. 2D olan UI vb. kısımlarda hem el emeği hem de bazen üretken yapay zeka'dan (ücretsiz plan) yararlandık. Oyunumuzun üretimini tamamlamak için herkesin yaptıklarını bu sprintte birleştiriyoruz.
+
+**Tamamlanması Tahmin Edilen Puan:** 43 SP
+
+**Tahmin Mantığı:** (Toplam Puan: 56 SP)
+
+- Görevler 3D tasarım, UI dizayn, oyun mekanikleri ve davranışları üzerine olduğundan karmaşıklık çok daha fazlaydı.
+
+- Teknik ağırlıklıktaydı.
+
+- Task’lar genellikle teknik odaklı olduğundan puanlar her zamankinden daha yüksekti ve projenin bittiği evreye yaklaştıkça yoğunluk arttı.
+
+**Daily Scrum:** Scrum içerisindeki iletişimimiz genellikle whatsapp ve açtığımız Slack kanalında Huddle üzerindeki toplantılarla sağlanmıştır.
+
+**Sprint Board Updates:**
+
+![](https://github.com/user-attachments/assets/bac59a0f-1f26-4a13-bce5-b38ff0b4c17a)
+
+**Screenshots:** ![Sprint 3 Oyun Görüntüleri](https://ibb.co/album/xX8zKN)
+
+![](https://github.com/user-attachments/assets/c7fdd60a-c691-47db-a2b5-5e8e5ff672ef)
+
+**Sprint Review:** Bu sprinti değerlendirmek gerekirse bu Sprint içinde fikrin bir kısmında değişiklik yaptık. Öncelikle multiplayer matchmaking sistemine dayalı olmasını planladığımız halde bunun yerine Google'un Firebase Realtime Database servisini kullanarak oyunumuz içindeki verileri kontrol ederek dünyanın herhangi bir yerinde oyunumuzu oynayan ve o anda aktif olan oyuncuların skorlarını görebileceğimiz bir LeaderBoard sistemi kurduk ve o anda aktif olarak oyunu oynayan oyuncular nickname'lerine göre liderlik tablosunda sıralandı. Oyunun içinde de karşıdan düşmanlar gelecek şekilde bir oynanış sunarak oyunumuzu tamamladık. Geliştirilebileceğini düşünüyoruz ancak bu haliyle de güzel bir oyun oldu. Arada iletişim kopukluklarımız olsa da projemizi tamamladık.
+
+**Sprint Retrospective:** Bu hafta teslim gerçekleştireceğiz ve oyunumuzu tamamladığımız için mutluyuz. Projemizden geri dönüt almak isteriz. Artık geriye sadece projemizin değerlendirmesini beklemek kaldı. Kapanışı yapacağız.
